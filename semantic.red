@@ -203,6 +203,8 @@ semantic: context [
 	]
 
 	collect-errors: function [top [block!]][
+		return []
+
 		ret: make block! 4
 		collect-errors*: function [pc [block!]][
 			while [not tail? pc] [
