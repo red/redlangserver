@@ -63,7 +63,7 @@ json-body: none
 
 process: function [data [string!]][
 	script: load-json data
-	set 'json-body copy #()
+	set 'json-body copy #[]
 	json-body/jsonrpc: "2.0"
 	if script/id [
 		json-body/id: script/id
@@ -145,7 +145,7 @@ on-initialize: function [params [map!]][
 			append workspace-folder ws/1/uri
 		]
 	]
-	caps: copy #()
+	caps: copy #[]
 	put caps 'textDocumentSync TextDocumentSyncKind/Incremental
 	put caps 'hoverProvider true
 	put caps 'completionProvider
