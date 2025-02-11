@@ -59,7 +59,7 @@ lexer: context [
 		range
 	]
 	;-- Range in lsp is zero-based position, use /keep for print
-	form-range: function [range [block!] return: [map!] /keep][
+	form-range: function [range [block!] /keep return: [map!]][
 		make map! reduce [
 			'start make map! reduce [
 				'line either keep [range/1/x][range/1/x - 1]
